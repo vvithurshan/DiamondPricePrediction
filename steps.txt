@@ -1,0 +1,28 @@
+1. Create a new environment for this project - isolation - different version of packages can be used
+    conda create -p venv python==3.8
+    our application referes to this environment
+
+2. Installing required packages 
+    write all the packages in the requirments.txt
+    pip install -r requirments.txt
+
+3.create a file setup.py for creating entire package such as padnas, numpy - it can be put into the 
+pypy
+
+4. Create a file called src - to write all the source code.
+    - create a file called __init__.py
+5. python setup.py install to install packages including requirments.txt
+
+6. add '-e .' in requirments.txt so that while installing requirments.txt setup.py get trigerred.
+
+7. Git setup
+    echo "# DiamondPricePrediction" >> README.md
+    git init
+    create README.md file
+    create git ignore file - what ever the things mentioned in this file will not be send into git
+    git add README.md
+    git add .
+    git commit -m "first commit"
+    git branch -M main
+    git remote add origin https://github.com/vvithurshan/DiamondPricePrediction.git
+    git push -u origin main
