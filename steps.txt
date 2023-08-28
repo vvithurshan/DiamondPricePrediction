@@ -26,3 +26,7 @@ pypy
     git branch -M main
     git remote add origin https://github.com/vvithurshan/DiamondPricePrediction.git
     git push -u origin main
+    create a file in git called .gitignore (but not commit)and select the template as python. 
+    copy all the things and paste it into the local .gitignore file
+    git add .
+    git commit -m "Second commit"
