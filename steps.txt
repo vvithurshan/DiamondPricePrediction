@@ -30,3 +30,31 @@ pypy
     copy all the things and paste it into the local .gitignore file
     git add .
     git commit -m "Second commit"
+    git push -u origin main
+
+8. Project Structure
+    1. create a folder - "artifacts" for pickle, data, and so on.
+    2. create a folder - "notebooks"
+        create a folder "data"
+
+    3. To automate the task - create a pipeline
+        1. training pipeline - EDA, FE, FS, model training
+            1. Data ingestion - reading the dataset from the source
+            2. Data Transformation - EDA, FS, FE
+            3. Model Trainer - multiple models are trined
+            4. Model Evaluater - best model is choosen.
+        2. prediction pipeline
+            1. Model deployment
+            2. make prediction with API.
+    4. create a folder called "components", "pipeline" inside src 
+        create a file called __init__.py insde components and pipeline
+    5. inside components, create the following fiels
+        data_ingestion.py, data_transformation.py, model_triner.py
+    6. inside pipeline, create the following fiels
+        prediction_pipeline.py, training_pipeline.py
+    7. inside src folder, create a file called utils.py for common functionalities, logger.py,
+        exception.py
+
+    git add .
+    git commit -m "third commit"
+    git push -u origin main
