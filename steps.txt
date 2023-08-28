@@ -58,3 +58,5 @@ pypy
     git add .
     git commit -m "third commit"
     git push -u origin main
+
+8. Logging and exception handling - common for all projects.
