@@ -60,3 +60,6 @@ pypy
     git push -u origin main
 
 8. Logging and exception handling - common for all projects.
+
+for running jupyter notebook install - pip install ipykernel
+9. EDA
