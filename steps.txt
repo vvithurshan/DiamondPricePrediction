@@ -62,4 +62,7 @@ pypy
 8. Logging and exception handling - common for all projects.
 
 for running jupyter notebook install - pip install ipykernel
-9. EDA
+9. EDA and Model training
+10. Data ingestion.py
+11. data_transformation.py 
+12. utils.py
