@@ -90,7 +90,7 @@ class DataTransformation:
             preprocessing_obj = self.get_data_transformation_object()
 
             target_column = 'price'
-            drop_columns = ['target', 'id']
+            drop_columns = [target_column, 'id']
 
             # diving the dataset into independent and dependent features
             # Training data
