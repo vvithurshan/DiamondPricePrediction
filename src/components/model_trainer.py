@@ -26,9 +26,9 @@ class ModelTrainer:
         try:
             logging.info("splitting Dependent and Independent variables from train adn test data")
             X_train, y_train, X_test, y_test = (
-                train_array[:,:,-1],
+                train_array[:,:-1],
                 train_array[:,-1],
-                test_array[:,:,-1],
+                test_array[:,:-1],
                 test_array[:,-1]
             )
 
@@ -37,11 +37,11 @@ class ModelTrainer:
                 'Lasso':Lasso(),
                 'Ridge':Ridge(),
                 'Elasticnet':ElasticNet(),
-                'DecisionTree':DecisionTreeRegressor,
+                'DecisionTree':DecisionTreeRegressor(),
                 'RandomForest':RandomForestClassifier()
             }
 
-            model_report:dict = evaluate_model(X_train, y_train, X_test, y_test)
+            model_report:dict = evaluate_model(X_train, y_train, X_test, y_test, models)
             logging.info(f'Model Report : {model_report}')
 
             ## getting the best model
@@ -52,10 +52,11 @@ class ModelTrainer:
             ]
 
             best_model = models[best_model_name]
-            logging.info(f'Best model foudn, model Name : {best_model_name}, R2 Score :{best_model_score}')
+            logging.info(f'Best model foudel, model Name : {best_model_name}, R2 Score :{best_model_score}')
 
             save_object(
                 file_path = self.model_trainer_config.trained_model_file_path, 
+                obj = best_model
             )
 
             

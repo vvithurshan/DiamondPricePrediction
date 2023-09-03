@@ -2,7 +2,7 @@ import os
 import sys
 import pickle
 import numpy as np
-import pandas as np
+import pandas as pd
 
 
 from src.exception import CustomException
@@ -25,6 +25,8 @@ def save_object(file_path, obj):
 
 
 def evaluate_model(X_train, y_train, X_test, y_test, models):
+    print(y_train.shape)
+    print(y_test.shape)
     try:
         report = {}
         for i in range(len(models)):
@@ -40,4 +42,14 @@ def evaluate_model(X_train, y_train, X_test, y_test, models):
         return report
     except Exception as e:
         logging.info('Exception occured during model training')
+        raise CustomException(e, sys)
+
+
+def load_object(file_path):
+    try:
+        with open(file_path, 'rb') as file_obj:
+            return pickle.load(file_obj)
+
+    except Exception as e:
+        logging.info('Exception occured in load_object function utils')
         raise CustomException(e, sys)
